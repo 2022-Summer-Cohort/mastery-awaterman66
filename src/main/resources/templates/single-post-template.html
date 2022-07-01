@@ -16,17 +16,29 @@
             <h1 class="header__title">Surviving Coding Boot Camp</h1>
             <nav class="header__nav">
                 <div class="header__nav-item"><a href="/" class="header__nav-link">Home</a></div>
-                <div class="header__nav-item"><a href="/hashtags" class="header__nav-link">Hashtags</a></div>
+                <div class="header__nav-item"><a href="/hashtags/" class="header__nav-link">Hashtags</a></div>
             </nav>
         </header>
         <main class="main-content">
             <section class="main-content__post post">
-                <h3 class="post__topic-title main-content__topic-title"><a th:text="${post.topic.name}" th:href="'/topics/'+${post.topic.id}" class="main-content__topic-link post__topic-link">Topic</a>
-                    </h3>
-                <h2 th:text="${post.title}" class="post__title main-content__topic-title">Post Title</h2>
-                <p th:text="${post.content}" class="post__content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque blanditiis, aut quae fuga id quis ut. 
-                    Eligendi necessitatibus blanditiis officia, odio deleniti natus molestiae fugiat ex quod vel aliquam illum.
-                </p>
+
+                    <h1 th:text = "${post.author}">
+                    </h1>
+                    <p th:text="${post.content}">
+
+                    </p>
+            <ul>
+                <li th:each = "post: ${post.hashtags}">
+                    <a th:href="'/hashtags/' + ${post.id}" th:text="${post.name}"></a>
+                </li>
+            </ul>
+            </section>
+            <section>
+                <form th:action="'/posts/' + ${post.id} + '/addHashtag'" method="POST">
+                    <label for="hashtagID">Leave a #Hashtag:</label>
+                    <input type="text" name="hashtag" id="hashtagID">
+                    <button type="submit">Submit</button>
+                </form>
             </section>
         </main>
     </div>
