@@ -16,9 +16,6 @@ different hashtags and a hashtag can be associated with different posts.
     and has a similar style to the other pages.  This page should display all hashtags in the application and provide 
     links to those individual hashtags.
   - Add an HTML form to the `single-post-template.html` that allows you to add a hashtag to the post you are viewing.
-  - Create a `HashtagStorage` service class to interact with your JPA repository for hashtags.  It should be able to 
-    retrieve a hashtag by the value of its id field and by the value of its name/title field, retrieve all hashtags, and
-    save new and existing hashtags.  
   - Create a `HashTagController` to provide three path mappings, one for individual hashtags, one for all hashtags, and 
  one for adding a hashtag to the system. 
   - Add a link to the all hashtags endpoint to the header's nav list on all pages.
@@ -55,3 +52,4 @@ application.  All of the above grading criteria still need to be met while you a
 3.  Add a form to the `single-post-template` that allows you to add comments to a post.  
 4.  Add a date/time field to the `Post` POJO and post template so that you can see when a post is created.
 
+WebMvcLayerTest not running
